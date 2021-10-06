@@ -10,6 +10,7 @@ const mode = localStorage.getItem('mode');
 console.log(mode);
 if (mode === 'dark') {
   htmlEl.classList.add('dark');
+  toggle.innerHTML = 'Light Mode';
 }
 const days = [
   'Sunday',
