@@ -124,7 +124,9 @@ body {
 .date .circle {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  font-weight: bold;
   border-radius: 50%;
+
   height: 18px;
   width: 18px;
   display: inline-flex;
