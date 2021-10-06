@@ -4,7 +4,13 @@ const secondEl = document.querySelector('.second');
 const timeEl = document.querySelector('.time');
 const dateEl = document.querySelector('.date');
 const toggle = document.querySelector('.toggle');
+const htmlEl = document.querySelector('html');
 
+const mode = localStorage.getItem('mode');
+console.log(mode);
+if (mode === 'dark') {
+  htmlEl.classList.add('dark');
+}
 const days = [
   'Sunday',
   'Monday',
@@ -31,12 +37,15 @@ const months = [
 
 toggle.addEventListener('click', (e) => {
   const html = document.querySelector('html');
+  console.log(html.classList);
   if (html.classList.contains('dark')) {
     html.classList.remove('dark');
     e.target.innerHTML = 'Dark mode';
+    localStorage.removeItem('mode');
   } else {
     html.classList.add('dark');
     e.target.innerHTML = 'Light mode';
+    localStorage.setItem('mode', 'dark');
   }
 });
 
